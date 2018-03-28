@@ -32,6 +32,18 @@ class Contact
     @id
   end
 
+  def first_name=(first_name)
+    @first_name = first_name
+  end
+
+  def last_name=(last_name)
+    @last_name = last_name
+  end
+
+  def email=(email)
+    @email = email
+  end
+
   # This method should call the initializer,
   # store the newly created contact, and then return it
   def self.create(first_name, last_name, email, note = 'N/A')
@@ -60,7 +72,15 @@ class Contact
   # 1. which of the contact's attributes you want to update
   # 2. the new value for that attribute
   # and then make the appropriate change to the contact
-  def update
+  def update(attribute, value)
+
+    if attribute == 'first_name'
+      self.first_name = value
+    elsif attribute == 'last_name'
+      self.last_name = value
+    elsif attribute == 'email'
+      self.email = value
+    end
 
   end
 
@@ -144,3 +164,7 @@ karen.delete
 # puts Contact.all.inspect
 
 puts karen.full_name
+
+karen.update('first_name', 'Jane')
+
+puts karen.inspect
