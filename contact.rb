@@ -24,6 +24,10 @@ class Contact
       return @email
   end
 
+  def note
+    @note
+  end
+
   def note=(note)
     @note = note
   end
@@ -63,7 +67,7 @@ class Contact
   def self.find(id)
     @@contacts.each do |person|
       if person.id == id
-        return person.first_name
+        return person
       end
     end
   end
@@ -93,19 +97,19 @@ class Contact
     if attribute == 'first_name'
       @@contacts.each do |person|
         if person.first_name == value
-          return person.first_name
+          return person
         end
       end
     elsif attribute == 'last_name'
       @@contacts.each do |person|
         if person.last_name == value
-          return person.first_name
+          return person
         end
       end
     elsif attribute == 'email'
       @@contacts.each do |person|
         if person.email == value
-          return person.first_name
+          return person
         end
       end
     end
@@ -131,7 +135,6 @@ class Contact
         @@contacts.delete(self)
       end
     end
-
   end
 
   # Feel free to add other methods here, if you need them.
@@ -159,12 +162,12 @@ candis = Contact.create('Candis', 'Hollyman', 'candishollyman@gmail.com')
 
 # Contact.delete_all
 
-karen.delete
+# karen.delete
 
 # puts Contact.all.inspect
 
-puts karen.full_name
+# puts karen.full_name
 
-karen.update('first_name', 'Jane')
+# karen.update('first_name', 'Jane')
 
-puts karen.inspect
+# puts karen.inspect
