@@ -21,7 +21,7 @@ class Contact
   end
 
   def email
-      return @email
+    return @email
   end
 
   def note
@@ -55,7 +55,6 @@ class Contact
     @@contacts.push(new_contact)
     return new_contact
   end
-
 
   # This method should return all of the existing contacts
   def self.all
@@ -144,7 +143,6 @@ end
 karen  = Contact.create('Karen',  'Gamis', 'kjgamis@live.ca',  'plays guitar')
 ernest = Contact.create('Ernest', 'Gamis', 'egamis@gmail.com', 'likes sports')
 candis = Contact.create('Candis', 'Hollyman', 'candishollyman@gmail.com')
-
 
 # puts karen.id
 
