@@ -70,8 +70,11 @@ class CRM
     puts "What is the new #{attribute}?"
     value = gets.chomp
 
+    # a = Contact.find(input_id)
+    # a.update(attribute, value)
+
     a = Contact.find(input_id)
-    a.update(attribute, value)
+    a.update(attribute => value)
   end
 
   def delete_contact
