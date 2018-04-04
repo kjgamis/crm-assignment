@@ -148,7 +148,10 @@ class Contact < ActiveRecord::Base
   # end
 
 end
-#
+
+Contact.auto_upgrade!
+
+
 # karen  = Contact.create('Karen',  'Gamis', 'kjgamis@live.ca',  'plays guitar')
 # ernest = Contact.create('Ernest', 'Gamis', 'egamis@gmail.com', 'likes sports')
 # candis = Contact.create('Candis', 'Hollyman', 'candishollyman@gmail.com')
